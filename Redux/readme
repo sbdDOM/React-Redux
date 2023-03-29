@@ -1,0 +1,52 @@
+/* What is redux
+
+-redux is not tied with react but is a js library
+-redux is a state container/management
+    state of an app is the state shared by all the individual components of that app
+    eg loginFormComponent
+        state = {
+            username = '',
+            paswword = '',
+            ...
+        }
+-redux will store and manage the application state
+-redux is predictable
+
+-----wy redux is bad-----
+-config redux is an app seems complicated
+-redux requires alot of other packages to be installed to get redux to be effective
+-redux requires too much boilerplate code
+
+Why redux toolkit 
+
+-serves as an abtraction over redux. it hides the difficult parts.
+
+what to consider when to use redux
+
+-large amounts of application state are needed in many places in the app
+-the app state is updated frequently over time
+-the logic to update the state may be complex 
+-the has a medium or large sized codebase
+
+----Three core concepts-----
+
+-store (safely holds the state of an apoplication)
+-action (describes what happened in the application)
+-reducer (handles the action and decides how to update the state)
+
+----Three principles----
+
+-global state of your application is stored as an object inside a single store
+-only way to change state is to dispatch an action, object that describes what happened
+-specify hot state tree is updated based on actions, you write pure reducers
+
+----Redux Store responsibilities----
+
+-Holds application state
+-allows access to state via getState()
+-allows state to be updated via dispatch(action)
+-registers listeners via subscribe(listener)
+-handles unregistering of listeners via the function returned by subscibe(listener)
+
+*/
+
