@@ -1,6 +1,7 @@
 const redux = require('redux')
 const createStore = redux.createStore
 const bindActionCreators = redux.bindActionCreators
+const combineReducers = redux.combineReducers
 
 //creating reducers
 const cakeOrdered = 'cakeOrdered'
@@ -102,11 +103,18 @@ const icecreamReducer = (state= initialIcecreamState, action) => {
     }
 }
 
+//Combine the reducers
+const rootReducer = combineReducers({
+    cake: cakeReducer,
+    icecream: icecreamReducer
+})
 
 //All responsibilities of redux store
 
 //create a state (1)(a)
-const store =  createStore(reducer)
+//But createStore only deals with one reducer
+//Now after combining the reducers we can use multiple reducers
+const store =  createStore(rootReducer)
 //allow access to state via getState() (2)
 console.log('Initial state', store.getState())
 
