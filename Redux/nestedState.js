@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
             //         street: action.payload,
             //     },
             // }
-        //SO immer takes the below return function and under the hood turns it into something like above
+        //SO immer takes the below return function and under the hood turns it into something like above 
         return produce(state, (draft) => {
             draft.address.street = action.payload
         })

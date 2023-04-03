@@ -2,6 +2,10 @@ const redux = require('redux')
 const createStore = redux.createStore
 const bindActionCreators = redux.bindActionCreators
 const combineReducers = redux.combineReducers
+const applyMiddleware = redux.applyMiddleware
+
+const reduxLogger = require('redux-logger')
+const logger = reduxLogger.createLogger()
 
 //creating reducers
 const cakeOrdered = 'cakeOrdered'
@@ -114,13 +118,13 @@ const rootReducer = combineReducers({
 //create a state (1)(a)
 //But createStore only deals with one reducer
 //Now after combining the reducers we can use multiple reducers
-const store =  createStore(rootReducer)
+const store =  createStore(rootReducer, applyMiddleware(logger))
 //allow access to state via getState() (2)
 console.log('Initial state', store.getState())
 
 //registers listenbers via subscribe() (4)
 //subscribe to the store (f)
-const unsubscribe = store.subscribe(() => console.log('Update state', store.getState()))
+const unsubscribe = store.subscribe(() => {})
 
 //update the state (3)
 //var i;
