@@ -50,7 +50,7 @@ what to consider when to use redux
 
 library to help when working with redux
 So keeping track that we updating the correct object we use a library called immer 
-npm i immer
+# npm i immer
 
 ----Middleware----
 
@@ -59,6 +59,18 @@ npm i immer
 -we can use it for eg. logging, crash reporting, performing asynchronous tasks etc
 
 another library but for redux tool that u have in browser, this one is for terminal
-npm i redux-logger
+# npm i redux-logger
+
+----Async action creators----
+
+-___axios 
+    -requests to an api end point
+-___redux-thunk 
+    -define async action creators
+    -Middleware 
+
+# npm i axios redux-thunk
+____JSONplaceholder is a good resource for fake api
+
 */
 
