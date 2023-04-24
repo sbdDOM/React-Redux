@@ -14,13 +14,14 @@ const userRequested = 'userRequested'
 const userSucceeded = 'userSucceeded'
 const userFailed = 'userFailed'
 
+
 const userRequest = () => {
     return {
         type: userRequested,
     }
 }
 
-const userSucceess = users => {
+const userSuccess = users => {
     return {
         type: userSucceeded,
         payload: users,
@@ -58,16 +59,16 @@ const reducer = (state = initialState, action) => {
 
 const fetchUsers = () => {
     return function(dispatch) {
-        dispatch(fetchUsersRequest())
+        dispatch(userRequest())
         axios
             .get('https://jsonplaceholder.typicode.com/users')
             .then(response => {
                 //response.data is the users 
                 const users = response.data.map((user) => user.id)
-                dispatch(fetchUsersSuccess(users))
+                dispatch(userSuccess(users))
             }).catch(error => {
                 //error.message is the error message
-                dispatch(fetchUsersFailure(error.message))
+                dispatch(userFailure(error.message))
             })
     }
 }

@@ -72,5 +72,11 @@ another library but for redux tool that u have in browser, this one is for termi
 # npm i axios redux-thunk
 ____JSONplaceholder is a good resource for fake api
 
+Async summary
+import the redux-thunk middleware and pass it out in the createStore function
+what this allows is for an action creator to return a function instead of an action 
+the function can perfom side effects such as asynchronous tasks
+the function can also dispatch regular actions which will then be handled by the read user
+
 */
 
