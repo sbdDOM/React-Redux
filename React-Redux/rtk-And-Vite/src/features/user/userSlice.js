@@ -1,4 +1,4 @@
-import {createSlice, AsyncThunk} from '@reduxjs/toolkit'
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 //with redux toolkit to create an async action we make use of the
 //createAsyncThunk function 
 //redux thunk is applied as a middleware to the store under the hood

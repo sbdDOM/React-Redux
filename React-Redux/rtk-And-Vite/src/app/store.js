@@ -5,7 +5,7 @@ import cakeReducer from '../features/cake/cakeSlice'
 import icecreamReducer from '../features/icecream/icecreamSlice'
 import userReducer from '../features/user/userSlice'
 
-const logger = reduxLogger.createLogger()
+//const logger = reduxLogger.createLogger()
 
 //invoke the constant and assign it to a variable
 const store = configureStore({
