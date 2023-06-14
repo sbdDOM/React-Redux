@@ -22,7 +22,7 @@ export const fetchUsers = createAsyncThunk('user/fetchUsers', () => {
     //The life cylces include: pending, fulfilled and rejected 
     return axios
     .get('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.data.map((user) => user.id))
+    .then((response) => response.data)
 })
 
 const userSlice = createSlice({
