@@ -102,6 +102,14 @@ const icecreamReducer = (state= initialIcecreamState, action) => {
                 ...state,
                 numOfIcecreams: state.numOfIcecreams + action.payload,
             }
+            //can only update its own portion of an application state however
+            //shown below it can respond to any action dispatched in the appliaction
+            // so it can update icecreams when the cake action is dispatched
+        case cakeOrdered:
+            return{
+                ...state,
+                numOfIcecreams: state.numOfIcecreams - 1,
+            }
         default:
             return state
     }
@@ -141,7 +149,9 @@ for(i = 0; i<4; i++){
     //update your store(g)
     actions.orderCake()
     actions.orderIcecream()
+    
 }
+
 actions.restockCake(3)
 actions.restockIcecream(2)
 
